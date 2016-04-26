@@ -1,0 +1,25 @@
+{
+
+"name" : "vagrant_development",
+
+"chef_type" : "role",
+
+"json_class" : "Chef::Role",
+
+"description" : "Jenkins Development Environment",
+
+"default_attributes" : {
+    "mysql" : {
+      "server_root_password" : "",
+      "server_repl_password" : "",
+      "server_debian_password" : ""
+    }
+},
+
+"run_list":[
+             "recipe[iptables::default]",
+             "recipe[java]",
+		"recipe[jenkins_utils::master]",
+		"recipe[nginx_conf]"
+]
+}
