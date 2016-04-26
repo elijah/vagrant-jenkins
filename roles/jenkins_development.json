@@ -1,6 +1,6 @@
 {
 
-"name" : "vagrant_development",
+"name" : "jenkins_development",
 
 "chef_type" : "role",
 
