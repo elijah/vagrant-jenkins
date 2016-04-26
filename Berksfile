@@ -32,4 +32,5 @@ cookbook 'pipeline'
 cookbook 'jenkins_utils', :github => 'elijah/jenkins_utils', :ref => 'master'
 
 cookbook 'nginx_conf'
+cookbook 'letsencrypt', '~> 0.1.7'
 
