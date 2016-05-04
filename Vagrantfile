@@ -17,6 +17,13 @@ Vagrant.configure("2") do |config|
        "domains" => "jenkins.stderr.org",
        "contact" => "mailto:elijah.wright@gmail.com"
      },
+  "nginx_conf" => {
+       "confs" => [{
+         'test1.mywebsite.com' => {
+           'upstream' => { "primary" => "http://127.0.0.1:8080"}
+         } 
+       }]
+     },
   "jenkins" => {
 	  "master" => {
 	    "version" => "2.0",
