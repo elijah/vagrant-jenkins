@@ -13,7 +13,11 @@ Vagrant.configure("2") do |config|
 	"jdk_version" => '8',
 	"accept_license_agreement" => true
      },
-	"jenkins" => {
+	"letsencrypt" => {
+       "domains" => "jenkins.stderr.org",
+       "contact" => "mailto:elijah.wright@gmail.com"
+     },
+  "jenkins" => {
 	  "master" => {
 	    "version" => "2.0",
 	    "source" => "http://mirrors.jenkins-ci.org/war-rc/2.0/jenkins.war"
@@ -27,7 +31,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider :virtualbox do |vb, override|
     vb.memory = 4096
     vb.cpus = 3 
-    override.vm.box = "centos/7"
+    override.vm.box = "opscode/wily64"
     if Vagrant.has_plugin?("vagrant-cachier")
       # Configure cached packages to be shared between instances of the same base box.
       # More info on http://fgrehm.viewdocs.io/vagrant-cachier/usage
@@ -46,8 +50,9 @@ Vagrant.configure("2") do |config|
       ##}
       # For more information please check http://docs.vagrantup.com/v2/synced-folders/basic_usage.html
     end
-    override.vm.network :forwarded_port, host: 8080, guest: 8080
-    override.vm.network :forwarded_port, guest: 22, host: 1234
+
+    config.vm.network "public_network", bridge: 'en0: Wi-Fi (AirPort)'
+    config.vm.network :forwarded_port, host: 8085, guest: 8080
   end
 
   config.vm.provider :parallels do |prl, override|

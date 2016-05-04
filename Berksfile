@@ -31,6 +31,11 @@ cookbook 'pipeline'
 
 cookbook 'jenkins_utils', :github => 'elijah/jenkins_utils', :ref => 'master'
 
+cookbook 'jenkins-server'
+cookbook 'yum'
+
 cookbook 'nginx_conf'
 cookbook 'letsencrypt', '~> 0.1.7'
+
+cookbook 'stderr-jenkins', :github => 'elijah/stderr-jenkins', :ref => 'master'
 

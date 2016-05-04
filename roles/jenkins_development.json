@@ -17,9 +17,10 @@
 },
 
 "run_list":[
-             "recipe[iptables::default]",
-             "recipe[java]",
-		"recipe[jenkins_utils::master]",
-		"recipe[nginx_conf]"
+      "recipe[iptables::default]",
+      "recipe[java]",
+		  "recipe[jenkins_utils::master]", 
+      "recipe[letsencrypt]",
+      "recipe[nginx_conf]"
 ]
 }
