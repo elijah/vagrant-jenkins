@@ -34,6 +34,8 @@ cookbook 'jenkins_utils', :github => 'elijah/jenkins_utils', :ref => 'master'
 cookbook 'jenkins-server'
 cookbook 'yum' 
 
+cookbook 'nginx-proxy'
+
 cookbook 'nginx', '~ 2.7.6'
 cookbook 'nginx_conf'
 cookbook 'letsencrypt', '~> 0.1.7'

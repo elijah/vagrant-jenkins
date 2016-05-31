@@ -17,13 +17,6 @@ Vagrant.configure("2") do |config|
        "domains" => "jenkins.stderr.org",
        "contact" => "mailto:elijah.wright@gmail.com"
      },
-  "nginx_conf" => {
-       "confs" => [{
-         'test1.mywebsite.com' => {
-           'upstream' => { "primary" => "http://127.0.0.1:8080"}
-         } 
-       }]
-     },
   "jenkins" => {
 	  "master" => {
 	    "version" => "2.0",
@@ -38,7 +31,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider :virtualbox do |vb, override|
     vb.memory = 4096
     vb.cpus = 3 
-    override.vm.box = "opscode/wily64"
+    override.vm.box = "ubuntu/wily64"
     if Vagrant.has_plugin?("vagrant-cachier")
       # Configure cached packages to be shared between instances of the same base box.
       # More info on http://fgrehm.viewdocs.io/vagrant-cachier/usage
@@ -59,7 +52,7 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.network "public_network", bridge: 'en0: Wi-Fi (AirPort)'
-    config.vm.network :forwarded_port, host: 8085, guest: 8080
+    config.vm.network :forwarded_port, host: 8086, guest: 8080
   end
 
   config.vm.provider :parallels do |prl, override|

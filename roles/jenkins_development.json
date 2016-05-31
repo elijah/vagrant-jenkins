@@ -21,7 +21,7 @@
       "recipe[java]",
 		  "recipe[jenkins_utils::master]", 
       "recipe[letsencrypt]",
-      "recipe[nginx::default]",
+      "recipe[nginx-proxy::setup]",
       "recipe[stderr-jenkins::default]"
 ]
 }
