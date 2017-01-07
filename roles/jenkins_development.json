@@ -17,11 +17,8 @@
 },
 
 "run_list":[
-      "recipe[iptables::default]",
-      "recipe[java]",
-		  "recipe[jenkins_utils::master]", 
-      "recipe[letsencrypt]",
-      "recipe[nginx-proxy::setup]",
-      "recipe[stderr-jenkins::default]"
+      "recipe[stderr-pihole::docker]",
+      "recipe[stderr-pihole::jenkins]",
+		  "recipe[stderr-pihole::traefik]" 
 ]
 }
